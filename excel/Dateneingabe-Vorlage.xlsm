@@ -1,0 +1,68 @@
+# Dateneingabe-Vorlage – Excel-Makro-Arbeitsmappe
+
+## Beschreibung
+
+Diese Excel-Arbeitsmappe dient als Dateneingabe für die automatische Dokumentgenerierung.
+Speichern Sie die Datei als `.xlsm` (Excel mit Makros).
+
+## Spaltenstruktur (Zeile 1 = Überschriften)
+
+| Spalte | Überschrift | Pflicht | Beispiel |
+|--------|-----------|---------|---------|
+| A | ANREDE | Ja | Sehr geehrte Frau |
+| B | VORNAME | Ja | Anna |
+| C | NACHNAME | Ja | Müller |
+| D | STRASSE | Ja | Musterstraße 42 |
+| E | PLZ | Ja | 12345 |
+| F | ORT | Ja | Musterhausen |
+| G | GEBURTSDATUM | Nein | 15.03.1985 |
+| H | AKTENZEICHEN | Ja | AZ-2024-001234 |
+| I | DATUM | Ja | 23.04.2026 |
+| J | BEHOERDE | Ja | Stadt Musterhausen |
+| K | ABTEILUNG | Ja | Bauamt |
+| L | BETREFF | Ja | Bauanfrage |
+| M | INHALT | Ja | Bescheidtext... |
+| N | FRIST | Nein | 4 Wochen |
+| O | BETRAG | Nein | 250,00 |
+| P | KONTAKT | Nein | 0123/45678 |
+
+## Konfiguration (Zeile 1, Spalte Q+)
+
+| Zelle | Inhalt | Beschreibung |
+|-------|--------|-------------|
+| Q1 | Pfad zur Vorlage | `templates\Bescheid-Vorlage.dotx` |
+| Q2 | KI aktiv | `JA` oder `NEIN` |
+
+## Beispieldaten (Zeile 2)
+
+| Feld | Wert |
+|------|------|
+| ANREDE | Sehr geehrte Frau |
+| VORNAME | Anna |
+| NACHNAME | Müller |
+| STRASSE | Musterstraße 42 |
+| PLZ | 12345 |
+| ORT | Musterhausen |
+| GEBURTSDATUM | 15.03.1985 |
+| AKTENZEICHEN | AZ-2024-001234 |
+| DATUM | 23.04.2026 |
+| BEHOERDE | Stadt Musterhausen |
+| ABTEILUNG | Bauamt |
+| BETREFF | Bescheid über Bauantrag |
+| INHALT | Hiermit erhalten Sie den Bescheid über Ihren Bauantrag vom 01.04.2026... |
+| FRIST | 4 Wochen |
+| BETRAG | 250,00 |
+| KONTAKT | 0123/45678 |
+
+## Validierung
+
+Die folgenden Validierungen werden empfohlen:
+- PLZ: Numerisch, 5 Stellen
+- BETRAG: Numerisch, 2 Dezimalstellen
+- DATUM: Datumsformat
+- AKTENZEICHEN: Nicht leer
+
+## Serienbrief
+
+Für Serienbriefe: Daten ab Zeile 2 eintragen, Makro `GenerateSerienbrief` aufrufen.
+Jede Zeile generiert ein separates Dokument im Ordner `output/`.

@@ -1,0 +1,26 @@
+# Anschreiben-Vorlage – Beschreibung
+
+## Word-Vorlage für behördliche Anschreiben
+
+## Platzhalter
+
+| Platzhalter | Beschreibung | Beispiel |
+|------------|-------------|---------|
+| {{ANREDE}} | Anrede | Sehr geehrter Herr Schmidt |
+| {{VORNAME}} | Vorname | Thomas |
+| {{NACHNAME}} | Nachname | Schmidt |
+| {{STRASSE}} | Straße | Beispielweg 7 |
+| {{PLZ}} | Postleitzahl | 12345 |
+| {{ORT}} | Ort | Musterhausen |
+| {{DATUM}} | Datum | 23.04.2026 |
+| {{BEHOERDE}} | Behördenname | Stadt Musterhausen |
+| {{ABTEILUNG}} | Abteilung | Bürgeramt |
+| {{BETREFF}} | Betreff | Terminbestätigung |
+| {{INHALT}} | Anschreibentext | Ihr Termin am... |
+| {{KONTAKT}} | Kontakt | Tel.: 0123/45678 |
+
+## Layout
+
+- Weniger formell als Bescheid
+- Möglicherweise mit Behördenlogo
+- Höflicher, aber sachlicher Stil

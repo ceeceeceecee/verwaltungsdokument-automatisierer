@@ -1,0 +1,24 @@
+# Bericht-Vorlage – Beschreibung
+
+## Word-Vorlage für behördliche Berichte
+
+## Platzhalter
+
+| Platzhalter | Beschreibung | Beispiel |
+|------------|-------------|---------|
+| {{BEHOERDE}} | Behördenname | Stadt Musterhausen |
+| {{ABTEILUNG}} | Abteilung | Bauamt |
+| {{DATUM}} | Berichtsdatum | 23.04.2026 |
+| {{BETREFF}} | Berichtstitel | Monatsbericht April 2026 |
+| {{INHALT}} | Berichtstext | Im Berichtszeitraum wurden... |
+| {{AKTENZEICHEN}} | Referenznummer | B-2026-04 |
+
+## Layout
+
+- Behördenkopf
+- Titel zentriert, groß
+- Gliederung mit Überschriften
+- Tabellen für Statistiken
+| {{VORNAME}} | Zuständiger | Anna |
+| {{NACHNAME}} | Zuständiger | Müller |
+| {{KONTAKT}} | Kontakt | a.mueller@musterhausen.de |
