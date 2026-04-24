@@ -131,14 +131,15 @@ pip install flask requests
 
 ---
 
+
+## 👤 Autor
+
+**Cela** — Freelancer für digitale Verwaltungslösungen
 ## 📄 Lizenz
 
 [MIT-Lizenz](LICENSE)
 
 ---
 
-## 👤 Autor
-
-**Cela** — Freelancer für digitale Verwaltungslösungen
 
 [GitHub](https://github.com/ceeceeceecee)
