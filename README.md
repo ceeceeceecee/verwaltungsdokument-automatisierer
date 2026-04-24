@@ -41,32 +41,33 @@
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Schnellstart
 
 ### Voraussetzungen
-- Microsoft Office 2016 oder neuer
-- Windows 10/11
-- Ollama (lokal) für KI-Optimierung
-- Python 3.8+ (für KI-Proxy)
+
+| Komponente | Version | Zweck |
+|---|---|---|
+| Microsoft Office | 2016+ | Excel & Word |
+| Windows | 10/11 | VBA-Makro-Ausführung |
+| Ollama | neueste | KI-Textoptimierung |
+| Python | 3.8+ | KI-Proxy (Flask) |
 
 ### Installation
 
 ```bash
-# Repository klonen
 git clone https://github.com/ceeceeceecee/verwaltungsdokument-automatisierer.git
-
-# KI-Proxy installieren (optional)
 cd verwaltungsdokument-automatisierer
+
+# KI-Proxy installieren (optional, für Ollama-Integration)
 pip install flask requests
 ```
 
-### VBA-Makros installieren
+### Erste Schritte
 
-1. `vba/DokumentGenerator.bas` und `vba/KIConnector.bas` öffnen
-2. In Excel: Alt+F11 → Einfügen → Modul
-3. Code einfügen
-4. Excel-Datei als `.xlsm` speichern
-5. Word-Vorlagen anpassen (Platzhalter: `{{VORNAME}}`, `{{NACHNAME}}`, etc.)
+1. **VBA-Makros installieren** — `vba/DokumentGenerator.bas` und `vba/KIConnector.bas` in Excel (Alt+F11 → Einfügen → Modul) importieren
+2. **Excel-Datei als `.xlsm` speichern** — Makros aktivieren
+3. **Word-Vorlagen anpassen** — Platzhalter: `{{VORNAME}}`, `{{NACHNAME}}`, etc.
+4. **Dokument generieren** — Button in Excel klicken, Word-Dokument wird automatisch erstellt
 
 👉 [Detaillierte Installationsanleitung](docs/installation.md)
 
