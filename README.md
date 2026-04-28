@@ -1,145 +1,72 @@
-# Verwaltungsdokument-Automatisierer – VBA + KI für Behörden
+# Verwaltungsdokument Automatisierer
 
-![DSGVO-Konform](https://img.shields.io/badge/DSGVO-Konform-brightgreen)
-![Self-Hosted](https://img.shields.io/badge/Self--Hosted-100%25-blue)
-![Office 2016-365](https://img.shields.io/badge/Office-2016--365-D04423)
-![VBA](https://img.shields.io/badge/VBA-Makros-7FBB3F)
-![License: MIT](https://img.shields.io/badge/Lizenz-MIT-yellow)
+<p align="center">
+<img src="https://raw.githubusercontent.com/ceeceeceecee/ai-document-analyzer/main/docs/coletrading-banner.svg" alt="ColeTrading" width="600">
+</p>
 
-> 🏛️ **VBA-Makros mit KI-Integration für deutsche Behörden** — Generiert Bescheide, Anschreiben und Berichte aus Excel-Daten per Knopfdruck. Läuft in der bestehenden Office-Infrastruktur.
+![Office](https://img.shields.io/badge/Office-2016-365-D04423) ![VBA](https://img.shields.io/badge/VBA-Makros-7FBB3F) ![DSGVO](https://img.shields.io/badge/DSGVO-Konform-brightgreen) ![Self-Hosted](https://img.shields.io/badge/Self-Hosted-100%-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
----
+> Automatisierung der Verwaltungsdokumenterstellung für Behörden
 
-## ✨ Features
+## Overview
 
-| Feature | Beschreibung |
-|---------|-------------|
-| 🔘 **Knopfdruck** | Dokumente direkt aus Excel mit einem Klick generieren |
-| 🤖 **KI-Optimierung** | Lokale KI (Ollama) verbessert Texte automatisch |
-| 📄 **Word-Vorlagen** | Beliebige Word-Vorlagen mit Platzhaltern nutzen |
-| ✉️ **Serienbrief** | Massendokumente aus Datenlisten erstellen |
-| 🔒 **100% Lokal** | Keine Daten verlassen den Rechner |
-| 🏢 **Behördenstil** | Formatiert für amtliche Korrespondenz |
-| 📋 **Protokollierung** | Alle Generierungen werden geloggt |
-| 🔄 **Office 2016-365** | Kompatibel mit allen aktuellen Office-Versionen |
+VBA-Makros und Python-Scripte zur Automatisierung von Verwaltungsdokumenten. Excel-Vorlagen, Word-Dokumente und KI-gestützte Texterstellung. Modular und erweiterbar.
 
----
+## Features
 
-## 🏗️ Architektur
+- VBA-Makros für Excel und Word
+- Python KI-Proxy für Texterstellung
+- Modulare Vorlagen-Struktur
+- Konfigurierbare Dokument-Typen
+- Batch-Verarbeitung
+- Einfache Anpassung
 
-```
-┌─────────────────┐    ┌──────────────┐    ┌─────────────┐
-│  Excel          │───▶│  VBA Makros  │───▶│  Flask-Proxy│
-│  Dateneingabe   │    │  (Generator) │    │  localhost  │
-└─────────────────┘    └──────┬───────┘    └──────┬──────┘
-                             │                   │
-                       ┌─────▼─────┐       ┌─────▼─────┐
-                       │  Word      │       │  Ollama   │
-                       │  Dokument  │       │  (lokal)  │
-                       └───────────┘       └───────────┘
-```
+## Tech Stack
 
----
+| Tech | Zweck |
+|------|-------|
+| VBA | Office-Automatisierung |
+| Python | KI-Proxy & Tools |
+| Ollama | Lokale KI |
+| Office 2016+ | Zielplattform |
 
-## 🚀 Schnellstart
-
-### Voraussetzungen
-
-| Komponente | Version | Zweck |
-|---|---|---|
-| Microsoft Office | 2016+ | Excel & Word |
-| Windows | 10/11 | VBA-Makro-Ausführung |
-| Ollama | neueste | KI-Textoptimierung |
-| Python | 3.8+ | KI-Proxy (Flask) |
-
-### Installation
+## Quick Start
 
 ```bash
-git clone https://github.com/ceeceeceecee/verwaltungsdokument-automatisierer.git
-cd verwaltungsdokument-automatisierer
-
-# KI-Proxy installieren (optional, für Ollama-Integration)
-pip install flask requests
+# VBA-Makros in Excel/Word importieren
+# Python KI-Proxy:
+cd python && pip install -r requirements.txt
+python proxy.py
 ```
 
-### Erste Schritte
+## Screenshots
 
-1. **VBA-Makros installieren** — `vba/DokumentGenerator.bas` und `vba/KIConnector.bas` in Excel (Alt+F11 → Einfügen → Modul) importieren
-2. **Excel-Datei als `.xlsm` speichern** — Makros aktivieren
-3. **Word-Vorlagen anpassen** — Platzhalter: `{{VORNAME}}`, `{{NACHNAME}}`, etc.
-4. **Dokument generieren** — Button in Excel klicken, Word-Dokument wird automatisch erstellt
+**Workflow-Übersicht**
 
-👉 [Detaillierte Installationsanleitung](docs/installation.md)
+<img src="screenshots/workflow.png" alt="Workflow-Übersicht" width="800">
 
----
+**Excel-Vorlage**
 
-## 📸 Screenshots
+<img src="screenshots/excel-vorlage.png" alt="Excel-Vorlage" width="800">
 
-![Excel-Vorlage](screenshots/excel-vorlage.png)
-*Excel-Tabelle mit Beispieldaten und Formular
+**KI-Proxy Konfiguration**
 
-![Word-Output](screenshots/word-output.png)
-*Generiertes Bescheid-Dokument
+<img src="screenshots/ki-proxy.png" alt="KI-Proxy Konfiguration" width="800">
 
-![KI-Proxy](screenshots/ki-proxy.png)
-*Flask-Proxy Terminal-Output
+**Word-Dokument-Output**
 
-![Workflow](screenshots/workflow.png)
-*Workflow-Diagramm
+<img src="screenshots/word-output.png" alt="Word-Dokument-Output" width="800">
 
 ---
 
-## 🔒 Datenschutz & DSGVO
+## Contributing
 
-- **100% lokal:** Keine Daten werden an externe Dienste gesendet
-- **KI-Proxy:** Lokaler Flask-Server als Zwischenschicht
-- **Keine Cloud:** Ollama läuft auf dem eigenen Rechner
-- **Protokollierung:** Jede Dokumentgenerierung wird erfasst
+Beiträge sind willkommen! Bitte erstelle einen Issue oder Pull Request.
 
----
+## License
 
-## 🏛️ Use Cases für Behörden
+MIT License — siehe [LICENSE](LICENSE).
 
-| Szenario | Beschreibung |
-|----------|-------------|
-| **Bescheide** | Baugenehmigungen, Gebührenbescheide, Sozialbescheide |
-| **Anschreiben** | Bürgeranfragen, Terminbestätigungen, Einladungen |
-| **Berichte** | Monatsberichte, Jahresberichte, Statistiken |
-| **Serienbriefe** | Massenbenachrichtigungen, Einladungen, Info-Schreiben |
-
----
-
-## 🗺️ Roadmap
-
-- [x] Basis-VBA-Generator
-- [x] KI-Proxy (Flask + Ollama)
-- [x] Word-Vorlagen-System
-- [x] Serienbrief-Funktion
-- [ ] PDF-Export
-- [ ] Outlook-Integration
-- [ ] Datensatz-Validierung
-- [ ] Mehrsprachige Vorlagen
-
----
-
-## 🤝 Contributing
-
-1. Fork erstellen
-2. Feature-Branch anlegen
-3. Änderungen committen
-4. Pull Request erstellen
-
----
-
-
-## 👤 Autor
-
-**Cela** — Freelancer für digitale Verwaltungslösungen
-## 📄 Lizenz
-
-[MIT-Lizenz](LICENSE)
-
----
-
-
-[GitHub](https://github.com/ceeceeceecee)
+<p align="center">
+<a href="https://github.com/ceeceeceecee">ColeTrading</a> &bull; DSGVO-konform &bull; Self-Hosted &bull; Open Source
+</p>
