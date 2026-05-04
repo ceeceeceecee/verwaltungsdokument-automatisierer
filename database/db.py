@@ -1,5 +1,5 @@
 """SQLite DB fuer Verwaltungsdokument-Automatisierer."""
-import sqlite3, json
+import sqlite3, json, random
 from datetime import datetime, timedelta
 from pathlib import Path
 

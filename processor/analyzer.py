@@ -2,7 +2,10 @@
 import json, requests
 
 class DokumentAnalyzer:
-    def __init__(self, url="http://localhost:11434", model="llama3.1:8b", temp=0.3, tokens=4096):
+    def __init__(self, url=None, model=None, temp=0.3, tokens=4096):
+        import os
+        self.url = (url or os.getenv("OLLAMA_HOST", "http://localhost:11434")).rstrip("/")
+        self.model = model or os.getenv("OLLAMA_MODEL", "llama3.1:8b")
         self.url=url.rstrip("/"); self.model=model; self.temp=temp; self.tokens=tokens
     def is_available(self):
         try: return requests.get(f"{self.url}/api/tags",timeout=3).status_code==200
